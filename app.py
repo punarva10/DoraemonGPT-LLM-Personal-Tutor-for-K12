@@ -33,7 +33,7 @@ def get_vectorstore(text_chunks):
     return vectorstore
 
 def get_conversation_chain(vectorstore):
-    llm = HuggingFaceHub(repo_id = "google/flan-t5-xxl", model_kwargs = {"temperature": 0.5, "max_length": 512})
+    llm = HuggingFaceHub(repo_id = "HuggingFaceH4/zephyr-7b-beta", model_kwargs = {"temperature": 0.5, "max_length": 512})
     memory = ConversationBufferMemory(memory_key = 'chat_history', return_messages=True)
     conversation_chain = ConversationalRetrievalChain.from_llm(
         llm = llm,
@@ -68,9 +68,6 @@ def main():
     user_question = st.text_input("Ask a question about the pdf:")
     if user_question:
         handle_userinput(user_question)
-
-    #st.write(user_template.replace("{{MSG}}", "Hello doraemon"), unsafe_allow_html = True)
-    #st.write(bot_template.replace("{{MSG}}", "Hello punarv"), unsafe_allow_html = True)
 
     with st.sidebar:
         st.subheader("Your documents")
