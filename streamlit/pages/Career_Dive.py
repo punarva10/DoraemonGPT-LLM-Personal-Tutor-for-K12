@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(layout="wide")
 
@@ -34,10 +35,8 @@ cols = st.columns(6)  # Create 3 columns for the buttons
 
 # Create buttons for each career option in a grid layout
 for i, career in enumerate(career_choices):
-    try:
-        col = cols[i % 6]  # Distribute the buttons across the 3 columns
-        if col.button(career):
-            st.session_state.selected_career = career
-    except:
-        st.write(career)
+    col = cols[i % 6]  # Distribute the buttons across the 3 columns
+    if col.button(career):
+        st.session_state.selected_career = career
+        switch_page('Career Details')
 

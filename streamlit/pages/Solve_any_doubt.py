@@ -114,6 +114,7 @@ def main():
         st.session_state.chat_history = None
  
     st.header("DoraemonGPT")
+    st.warning('(Please note that Doraemon may not provide perfect answers sometimes(Though it is very unlikely!))')
     user_question = st.text_input("Ask a question about the pdf:")
     if user_question:
         handle_userinput(user_question)

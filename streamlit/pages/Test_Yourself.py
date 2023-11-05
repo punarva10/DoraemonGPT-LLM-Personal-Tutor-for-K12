@@ -100,16 +100,19 @@ def mcq_test(s):
     if st.button("Submit"):
         st.write(f"Your score: {score}/{len(questions)}")
 
+        if score>2:
+            st.success("Good job! You're getting the hang of this!")
+        else:
+            st.error("Not bad, but let's practice more!")
+
     
 def science():
 
-    st.header("Test yourself! 👨🏻‍🎓")
     st.subheader("Answer the following questions:")
     mcq_test("s")
 
 def english():
 
-    st.header("Test yourself! 👨🏻‍🎓")
     st.subheader("Answer the following questions:")
     mcq_test("e")
 
