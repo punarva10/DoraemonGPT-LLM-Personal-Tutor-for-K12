@@ -7,7 +7,8 @@ from langchain.vectorstores import FAISS
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 from htmlTemplates import css, bot_template, user_template
-from langchain.llms import HuggingFaceHub
+from langchain.llms import GooglePalm
+from langchain.chains.question_answering import load_qa_chain
 
 def get_pdf_text(pdf_docs):
     text = ""
@@ -33,7 +34,8 @@ def get_vectorstore(text_chunks):
     return vectorstore
 
 def get_conversation_chain(vectorstore):
-    llm = HuggingFaceHub(repo_id = "HuggingFaceH4/zephyr-7b-beta", model_kwargs = {"temperature": 0.5, "max_length": 512})
+    api_key = "AIzaSyAJsRgJzy5XSwFTCjPBIqmcEQw_0SE5d1g"
+    llm = GooglePalm(google_api_key = api_key, temperature = 0.1)
     memory = ConversationBufferMemory(memory_key = 'chat_history', return_messages=True)
     conversation_chain = ConversationalRetrievalChain.from_llm(
         llm = llm,
@@ -51,6 +53,9 @@ def handle_userinput(user_question):
             st.write(user_template.replace("{{MSG}}", message.content), unsafe_allow_html = True)
         else:
             st.write(bot_template.replace("{{MSG}}", message.content), unsafe_allow_html = True)
+
+
+
 
 def main():
     load_dotenv()
@@ -80,7 +85,6 @@ def main():
 
                 # get the text chunks
                 text_chunks = get_text_chunks(raw_text)
-                st.write(text_chunks)
 
                 #create vector store
                 vectorstore = get_vectorstore(text_chunks)
