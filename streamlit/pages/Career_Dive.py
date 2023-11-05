@@ -41,5 +41,3 @@ for i, career in enumerate(career_choices):
     except:
         st.write(career)
 
-# Add a message for inspiration
-st.write("No matter what career you choose, remember that hard work and dedication can lead you to success!")
