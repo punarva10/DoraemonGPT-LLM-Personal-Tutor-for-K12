@@ -1,4 +1,4 @@
-# DoraemonGPT: 
+# DoraemonGPT
 
 ## An LLM powered personal tutor for kids to act as a helping hand thorughout their education and help them with tests and even career guidance
 
