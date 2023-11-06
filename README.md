@@ -8,3 +8,8 @@ How to run:
 3. pip install -U sentence-transformers (from https://huggingface.co/BAAI/bge-base-en-v1.5)
 4. cd streamlit
 5. streamlit run home.py
+
+## Important Youtube Links:
+
+1. https://youtu.be/AjQPRomyd-k?si=cG2rZA4fVpKyhyY_
+2. https://youtu.be/dXxQ0LR-3Hg?si=KRdbF9A2antCW3_p
