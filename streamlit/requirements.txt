@@ -5,3 +5,7 @@ streamlit==1.28.1
 streamlit_extras==0.3.5
 sentence-transformers
 FlagEmbedding
+faiss-cpu
+huggingface_hub
+
+
