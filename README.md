@@ -7,10 +7,8 @@ https://doraemon-gpt.streamlit.app/
 
 ## How to run
 1. pip install -r requirements.txt
-2. pip install FlagEmbedding
-3. pip install -U sentence-transformers (from https://huggingface.co/BAAI/bge-base-en-v1.5)
-4. cd streamlit
-5. streamlit run home.py
+2. cd streamlit
+3. streamlit run home.py
 
 ## Important Youtube Links
 1. https://youtu.be/AjQPRomyd-k?si=cG2rZA4fVpKyhyY_
