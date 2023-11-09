@@ -2,7 +2,7 @@ import streamlit as st
 
 def main():
     st.header("Welcome to Doraemon's Study Zone!")
-    image_path = "/Users/punarvdinakar/Desktop/DoraemonGPT_git/streamlit/pic.png"
+    image_path = "streamlit/pic.png"
     width = 500  # Replace with your desired width
 
     # Display the image with the specified size
