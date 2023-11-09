@@ -7,5 +7,5 @@ sentence-transformers
 FlagEmbedding
 faiss-cpu
 huggingface_hub
-
+google-generativeai
 
